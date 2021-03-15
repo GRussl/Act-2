@@ -17,6 +17,11 @@ export default function App() {
   const addtexthandler = () => {
     setadedword(currentword => [...currentword, enteredword]);
   };
+  
+  const clearinput = () => {
+   (enteredword);
+    setenteredword('')
+  }
 
   return (
     <View style={styles.container}>
@@ -25,7 +30,7 @@ export default function App() {
         onChangeText ={typewordhandler}
         value={enteredword}
         />
-      <Button title="Add" onPress={addtexthandler}/>
+      <Button title="Add" onPress={clearinput}/>
       <View>
         <View>
           {addedword.map ((word) => <ScrollView style={styles.listitem}> <text key={word}>{word}</text> </ScrollView>)}
